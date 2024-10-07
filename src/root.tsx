@@ -21,6 +21,7 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charset="utf-8" />
+        <title>이종수</title>
         {!isDev && (
           <link
             rel="manifest"
