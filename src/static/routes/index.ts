@@ -26,7 +26,8 @@ export const projects: TProject[] = [
   {
     id: 11,
     title: "Team.gg",
-    description: '온라인 게임 "리그 오브 레전드"의 전적 검색 웹 서비스.',
+    description:
+      '온라인 게임 "리그 오브 레전드" 사용자의 전적 검색이 가능한 서비스 구현',
     image: "/images/teamGG.png",
     duration: "24.04.15 ~ 24.05.27",
     technologies: ["HTML5", "SCSS", "JavaScript", "Node.js"],
