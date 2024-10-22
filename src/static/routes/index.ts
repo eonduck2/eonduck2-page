@@ -113,7 +113,8 @@ export const projects: TProject[] = [
   {
     id: 4,
     title: "Workids",
-    description: "저출산, 고령화에 필요한 첨단 디지털 서비스 개발",
+    description:
+      "저출산, 고령화에 필요한 첨단 디지털 서비스 개발을 위한 설계 기반 개발 진행",
     image: "/images/workids.png",
     duration: "24.08.27 ~ 24.09.06",
     technologies: ["TypeScript", "Python", "SQL"],
