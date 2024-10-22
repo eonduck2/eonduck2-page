@@ -50,9 +50,15 @@ export default component$(() => {
   });
 
   const getFilteredProjects = () => {
-    return activeCategory.value === "전체"
-      ? projects
-      : projects.filter((project) => project.category === activeCategory.value);
+    const filteredProjects =
+      activeCategory.value === "전체"
+        ? [...projects]
+        : projects.filter(
+            (project) => project.category === activeCategory.value,
+          );
+
+    // ID를 기준으로 정렬
+    return filteredProjects.sort((a, b) => a.id - b.id);
   };
 
   return (
