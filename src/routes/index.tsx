@@ -63,7 +63,7 @@ export default component$(() => {
 
   return (
     <div class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-      <nav class="fixed left-0 z-50 flex h-screen w-20 flex-col items-center justify-center space-y-8 bg-transparent">
+      <nav class="fixed left-0 z-50 flex h-screen w-20 flex-col items-center justify-center gap-7 space-y-8 bg-transparent">
         <div class="h-32 w-1 bg-gradient-to-b from-transparent via-purple-500 to-transparent"></div>
         {["home", "about", "projects", "contact"].map((item) => (
           <a
