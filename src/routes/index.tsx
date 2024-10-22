@@ -34,7 +34,7 @@ export default component$(() => {
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.2 },
     );
 
     document.querySelectorAll("section").forEach((section) => {
@@ -229,6 +229,7 @@ export default component$(() => {
                 <div class="space-y-4">
                   {[
                     { icon: "📧", text: "whdtnxd@gmail.com" },
+                    { icon: "🐱‍👤", text: "https://github.com/eonduck2" },
                     { icon: "📍", text: "대전 서구" },
                   ].map((item) => (
                     <div
