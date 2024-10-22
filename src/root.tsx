@@ -28,6 +28,7 @@ export default component$(() => {
           />
         )}
         <RouterHead />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body lang="en">
         <RouterOutlet />
