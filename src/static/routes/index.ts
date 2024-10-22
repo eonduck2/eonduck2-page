@@ -163,8 +163,8 @@ export const stacks = {
   Language: ["JavaScript", "TypeScript", "Go", "Python"],
   "Front-End": [
     "React.js",
-    "Vue.js",
     "Next.js",
+    "Vue.js",
     "Qwik",
     "Tailwind CSS",
     "Vanilla Extract",
