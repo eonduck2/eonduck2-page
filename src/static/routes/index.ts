@@ -86,7 +86,7 @@ export const projects: TProject[] = [
   {
     id: 6,
     title: "Dream Vending Machine",
-    description: "세상에 없는 자판기 구현",
+    description: "세상에 없는 신비로운 자판기 구현",
     image: "/images/dream_vending.png",
     duration: "24.06.21 ~ 24.07.11",
     technologies: ["HTML5", "Tailwind CSS", "TypeScript", "SQLite3"],

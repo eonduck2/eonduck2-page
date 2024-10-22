@@ -10,6 +10,7 @@ export const RouterHead = component$(() => {
 
   return (
     <>
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <title>{head.title}</title>
 
       <link rel="canonical" href={loc.url.href} />
