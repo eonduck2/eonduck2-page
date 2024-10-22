@@ -126,7 +126,7 @@ export const projects: TProject[] = [
     id: 3,
     title: "Tarantula",
     description:
-      "개인 프로젝트에 사용할 유튜브 관련 정보들을 수집하는 크롤러 구현",
+      "개인 프로젝트에 사용할 유튜브 관련 정보들을 수집하는 크롤러 개발",
     image: "/images/tarantula.png",
     duration: "24.09.11 ~ 24.09.11",
     technologies: ["python"],
