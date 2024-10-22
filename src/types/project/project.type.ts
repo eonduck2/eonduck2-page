@@ -1,4 +1,4 @@
-import { TProjectCategory } from "./projectCategory.type";
+import type { TProjectCategory } from "./projectCategory.type";
 
 export type TProject = {
   id: number;

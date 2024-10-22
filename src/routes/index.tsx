@@ -1,6 +1,6 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import "../styles/routes/index.css";
-import { TProjectCategory } from "~/types/project/projectCategory.type";
+import type { TProjectCategory } from "~/types/project/projectCategory.type";
 import { projects } from "../static/routes";
 import { stacks } from "../static/routes";
 
