@@ -107,7 +107,7 @@ export default component$(() => {
               </p>
             </div>
             <div class="card-gradient col-span-4 translate-y-12 transform rounded-lg p-8">
-              <h3 class="gradient-text mb-6 text-xl font-bold">Skills</h3>
+              <h3 class="gradient-text mb-6 text-xl font-bold">Stack</h3>
               <div class="space-y-6">
                 {Object.entries(stacks).map(([category, items]) => (
                   <div key={category} class="space-y-2">
