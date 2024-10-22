@@ -90,7 +90,7 @@ export default component$(() => {
           <div class="absolute -inset-1 animate-pulse rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 opacity-25 blur"></div>
           <div class="card-gradient relative rounded-lg p-12">
             <h1 class="gradient-text mb-4 text-7xl font-bold">이종수</h1>
-            <p class="animated-border inline-block text-2xl text-gray-400">
+            <p class="animated-border flex justify-center text-2xl text-gray-400">
               Web Developer
             </p>
           </div>
@@ -229,7 +229,7 @@ export default component$(() => {
                 <div class="space-y-4">
                   {[
                     { icon: "📧", text: "whdtnxd@gmail.com" },
-                    { icon: "🐱‍👤", text: "https://github.com/eonduck2" },
+                    { icon: "🤖", text: "https://github.com/eonduck2" },
                     { icon: "📍", text: "대전 서구" },
                   ].map((item) => (
                     <div
