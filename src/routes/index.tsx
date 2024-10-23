@@ -1,11 +1,20 @@
-import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
+import {
+  component$,
+  useVisibleTask$,
+  useSignal,
+  useStore,
+} from "@builder.io/qwik";
 import "../styles/routes/index.css";
 import type { TProjectCategory } from "~/types/project/projectCategory.type";
 import { projects } from "../static/routes";
 import { stacks } from "../static/routes";
 
 export default component$(() => {
-  const activeSection = useSignal("home");
+  const state = useStore({
+    activeSection: "home",
+    manuallySelected: false,
+    lastScrollTime: 0,
+  });
   const activeCategory = useSignal<TProjectCategory>("전체");
 
   useVisibleTask$(() => {
@@ -17,7 +26,9 @@ export default component$(() => {
         const section = document.getElementById(sectionId);
         if (section) {
           section.scrollIntoView({ behavior: "smooth" });
-          activeSection.value = sectionId;
+          state.activeSection = sectionId;
+          state.manuallySelected = true;
+          state.lastScrollTime = Date.now();
         }
       }
     };
@@ -29,8 +40,13 @@ export default component$(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            activeSection.value = entry.target.id;
+          const timeSinceLastScroll = Date.now() - state.lastScrollTime;
+          if (
+            entry.isIntersecting &&
+            (!state.manuallySelected || timeSinceLastScroll > 1000)
+          ) {
+            state.activeSection = entry.target.id;
+            state.manuallySelected = false;
           }
         });
       },
@@ -71,7 +87,7 @@ export default component$(() => {
             key={item}
             class={`hover-transform rotate-[-90deg] transform cursor-pointer text-gray-300 transition-all
               ${
-                activeSection.value === item
+                state.activeSection === item
                   ? "font-bold text-purple-400"
                   : "hover:text-purple-400"
               }`}
