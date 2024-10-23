@@ -244,8 +244,9 @@ export default component$(() => {
                   <div class="space-y-3 md:space-y-4">
                     {[
                       { icon: "📧", text: "whdtnxd@gmail.com" },
-                      { icon: "🤖", text: "https://github.com/eonduck2" },
+                      { icon: "📱", text: "010-8073-5606" },
                       { icon: "📍", text: "대전 서구" },
+                      { icon: "🤖", text: "https://github.com/eonduck2" },
                     ].map((item) => (
                       <div
                         key={item.text}

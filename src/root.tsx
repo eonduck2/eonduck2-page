@@ -21,6 +21,11 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charset="utf-8" />
+        <meta name="description" content="풀스택 개발자 포트폴리오입니다." />
+        <meta
+          name="keywords"
+          content="풀스택 포트폴리오, 웹개발자, React, Node.js, 풀스택, 웹"
+        />
         {!isDev && (
           <link
             rel="manifest"
@@ -30,7 +35,7 @@ export default component$(() => {
         <RouterHead />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
-      <body lang="en">
+      <body lang="ko">
         <RouterOutlet />
         {!isDev && <ServiceWorkerRegister />}
       </body>
