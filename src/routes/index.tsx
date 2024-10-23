@@ -253,9 +253,20 @@ export default component$(() => {
                         class="hover-transform flex items-center space-x-3"
                       >
                         <span class="text-base md:text-lg">{item.icon}</span>
-                        <span class="text-sm text-gray-300 md:text-base">
-                          {item.text}
-                        </span>
+                        {item.icon === "🤖" ? (
+                          <a
+                            href={item.text}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-sm text-gray-300 md:text-base"
+                          >
+                            {item.text}
+                          </a>
+                        ) : (
+                          <span class="text-sm text-gray-300 md:text-base">
+                            {item.text}
+                          </span>
+                        )}
                       </div>
                     ))}
                   </div>
