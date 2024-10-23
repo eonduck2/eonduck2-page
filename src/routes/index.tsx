@@ -62,9 +62,9 @@ export default component$(() => {
 
   return (
     <div class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-      {/* Navigation - 모바일에서는 하단에 위치하도록 수정 */}
-      <nav class="fixed left-0 z-50 flex h-screen w-20 flex-col items-center justify-center gap-7 space-y-8 bg-transparent md:bottom-auto lg:left-0 lg:h-screen">
-        <div class="hidden h-32 w-1 bg-gradient-to-b from-transparent via-purple-500 to-transparent md:block"></div>
+      {/* 네비게이션 수정 */}
+      <nav class="fixed left-0 top-0 z-50 flex h-screen w-20 flex-col items-center justify-center gap-7 space-y-8 bg-transparent">
+        <div class="h-32 w-1 bg-gradient-to-b from-transparent via-purple-500 to-transparent"></div>
         {["home", "about", "projects", "contact"].map((item) => (
           <a
             href={`#${item}`}
@@ -79,12 +79,12 @@ export default component$(() => {
             {item.charAt(0).toUpperCase() + item.slice(1)}
           </a>
         ))}
-        <div class="hidden h-32 w-1 bg-gradient-to-b from-purple-500 via-transparent to-transparent md:block"></div>
+        <div class="h-32 w-1 bg-gradient-to-b from-purple-500 via-transparent to-transparent"></div>
       </nav>
 
       <section
         id="home"
-        class="flex h-screen items-center justify-center pl-4 md:pl-20"
+        class="flex h-screen items-center justify-center pl-20"
       >
         <div class="relative">
           <div class="absolute -inset-1 animate-pulse rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 opacity-25 blur"></div>
@@ -99,19 +99,17 @@ export default component$(() => {
         </div>
       </section>
 
-      <section id="about" class="min-h-screen px-4 py-10 md:py-20 md:pl-20">
-        <div class="mx-auto max-w-6xl">
+      <section id="about" class="min-h-screen py-10 pl-20 md:py-20">
+        <div class="mx-auto max-w-6xl px-4">
           <h2 class="gradient-text mb-8 text-3xl font-bold md:mb-12 md:text-4xl">
             About Me
           </h2>
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-11">
-            {/* About 텍스트 섹션 */}
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div class="card-gradient rounded-lg md:col-span-8">
               <p class="p-4 text-base leading-relaxed text-gray-300 md:text-lg">
                 의도적이고 명확한 개발을 좋아하는 개발자입니다.
               </p>
             </div>
-            {/* 스택 섹션 */}
             <div class="card-gradient mt-6 transform rounded-lg p-6 md:col-span-4 md:mt-0 md:translate-y-12 md:p-8">
               <h3 class="gradient-text mb-4 text-xl font-bold md:mb-6">
                 Stack
@@ -138,8 +136,8 @@ export default component$(() => {
         </div>
       </section>
 
-      <section id="projects" class="min-h-screen px-4 py-10 md:py-20 md:pl-20">
-        <div class="mx-auto max-w-6xl">
+      <section id="projects" class="min-h-screen py-10 pl-20 md:py-20">
+        <div class="mx-auto max-w-6xl px-4">
           <h2 class="gradient-text mb-8 text-3xl font-bold md:mb-12 md:text-4xl">
             Featured Projects
           </h2>
@@ -232,8 +230,8 @@ export default component$(() => {
         </div>
       </section>
 
-      <section id="contact" class="min-h-screen px-4 py-10 md:py-20 md:pl-20">
-        <div class="mx-auto max-w-4xl">
+      <section id="contact" class="min-h-screen py-10 pl-20 md:py-20">
+        <div class="mx-auto max-w-4xl px-4">
           <h2 class="gradient-text mb-8 text-3xl font-bold md:mb-12 md:text-4xl">
             Contact
           </h2>
