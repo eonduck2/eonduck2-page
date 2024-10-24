@@ -159,7 +159,7 @@ export default component$(() => {
                   isModalOpen.value = false;
                   selectedProject.value = null;
                 }}
-                class="absolute -right-4 -top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
+                class="absolute -right-4 -top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -182,6 +182,7 @@ export default component$(() => {
                   src={selectedProject.value.image}
                   alt={selectedProject.value.title}
                   class="mb-4 h-auto w-full rounded-lg"
+                  loading="lazy"
                 />
                 <h2 class="gradient-text mb-2 text-2xl font-bold">
                   {selectedProject.value.title}
@@ -193,20 +194,24 @@ export default component$(() => {
 
               <div class="mb-6">
                 <h3 class="mb-2 text-lg font-semibold text-white">
-                  프로젝트 소개
+                  프로젝트의 개발 의도
                 </h3>
-                <p class="text-gray-300">{selectedProject.value.description}</p>
+                <p class="text-gray-300">
+                  {selectedProject.value.details?.purpose}
+                </p>
               </div>
 
               <div class="mb-6">
-                <h3 class="mb-2 text-lg font-semibold text-white">개발 기간</h3>
-                <p class="text-gray-300">{selectedProject.value.duration}</p>
+                <h3 class="mb-2 text-lg font-semibold text-white">주요 업무</h3>
+                <p class="text-gray-300">
+                  {selectedProject.value.details?.mainTask}
+                </p>
               </div>
 
               <div class="mb-6">
                 <h3 class="mb-2 text-lg font-semibold text-white">사용 기술</h3>
                 <div class="flex flex-wrap gap-2">
-                  {selectedProject.value.technologies.map((tech) => (
+                  {selectedProject.value.details?.stack.map((tech) => (
                     <span
                       key={tech}
                       class="rounded-full bg-purple-900/50 px-3 py-1 text-sm text-purple-300"
@@ -216,6 +221,7 @@ export default component$(() => {
                   ))}
                 </div>
               </div>
+              {/* !! */}
             </div>
           </div>
         </div>

@@ -6,11 +6,17 @@ export const projects: TProject[] = [
     title: "랜덤 음악 추천기",
     description: "최근에 자주 듣는 음악들을 선정해서 랜덤하게 추천",
     image: "/images/random_music.png",
+    images: ["/images/iphone15.png", "/images/teamGG.png"],
     duration: "24.04.03 ~ 24.04.05",
     technologies: ["HTML5", "CSS3", "JavaScript"],
     aboutLink: "https://eonduck2.github.io/random_music_recommend/",
     githubLink: "https://github.com/eonduck2/random_music_recommend",
     category: "개인",
+    details: {
+      purpose: "테스트 퍼포즈",
+      mainTask: "테스트 태스크",
+      stack: ["테스트 스택1.8", "테스트 스택 1.2"],
+    },
   },
   {
     id: 12,

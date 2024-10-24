@@ -1,10 +1,58 @@
-import { component$, useStore } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 
 export default component$(() => {
   const state = useStore({
     activeSection: "home",
     manuallySelected: false,
     lastScrollTime: 0,
+  });
+
+  useVisibleTask$(() => {
+    const handleNavClick = (e: Event) => {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLAnchorElement;
+      const sectionId = target.getAttribute("href")?.replace("#", "");
+      if (sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+          state.activeSection = sectionId;
+          state.manuallySelected = true;
+          state.lastScrollTime = Date.now();
+        }
+      }
+    };
+
+    document.querySelectorAll("nav a").forEach((link) => {
+      link.addEventListener("click", handleNavClick);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const timeSinceLastScroll = Date.now() - state.lastScrollTime;
+          if (
+            entry.isIntersecting &&
+            (!state.manuallySelected || timeSinceLastScroll > 1000)
+          ) {
+            state.activeSection = entry.target.id;
+            state.manuallySelected = false;
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    document.querySelectorAll("section").forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.removeEventListener("click", handleNavClick);
+      });
+      observer.disconnect();
+    };
   });
 
   return (

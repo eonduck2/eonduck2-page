@@ -5,9 +5,15 @@ export type TProject = {
   title: string;
   description: string;
   image: string;
+  images?: string[];
   duration: string;
   technologies: string[];
   aboutLink?: string;
   githubLink: string;
   category: TProjectCategory;
+  details?: {
+    purpose: string;
+    mainTask: string;
+    stack: string[];
+  };
 };
