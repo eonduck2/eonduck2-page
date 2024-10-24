@@ -1,9 +1,26 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { projects } from "~/static/routes";
 import type { TProjectCategory } from "~/types/project/projectCategory.type";
 
 export default component$(() => {
   const activeCategory = useSignal<TProjectCategory>("전체");
+  const selectedProject = useSignal<(typeof projects)[0] | null>(null);
+  const isModalOpen = useSignal(false);
+
+  useVisibleTask$(({ track }) => {
+    track(() => isModalOpen.value);
+
+    if (isModalOpen.value) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // 컴포넌트가 언마운트될 때 스크롤을 다시 활성화
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  });
 
   const getFilteredProjects = () => {
     const filteredProjects =
@@ -57,7 +74,7 @@ export default component$(() => {
               />
               <div class="absolute inset-0 bg-black opacity-0 transition-opacity group-hover:opacity-50"></div>
               <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
-                <div class="flex space-x-4">
+                <div class="flex space-x-3">
                   <a
                     href={project.aboutLink}
                     target="_blank"
@@ -74,6 +91,15 @@ export default component$(() => {
                   >
                     GitHub
                   </a>
+                  <button
+                    onClick$={() => {
+                      selectedProject.value = project;
+                      isModalOpen.value = true;
+                    }}
+                    class="rounded-lg bg-blue-600 px-3 py-1.5 text-sm text-white transition-colors hover:bg-blue-700 md:px-4 md:py-2 md:text-base"
+                  >
+                    Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -107,6 +133,93 @@ export default component$(() => {
           </div>
         ))}
       </div>
+
+      {/* Modal with custom Y scrollbar */}
+      {isModalOpen.value && selectedProject.value && (
+        <div class="fixed inset-0 z-50 flex items-center justify-center">
+          <div
+            class="fixed inset-0 bg-black/60"
+            onClick$={() => {
+              isModalOpen.value = false;
+              selectedProject.value = null;
+            }}
+          ></div>
+          <div class="relative z-10 max-h-[90vh] w-[90%] max-w-4xl rounded-lg bg-gray-900 p-6 shadow-xl">
+            <div
+              class="max-h-[calc(90vh-3rem)] overflow-y-auto overflow-x-hidden pr-6
+                [&::-webkit-scrollbar-thumb:hover]:bg-purple-500
+                [&::-webkit-scrollbar-thumb]:rounded-full
+                [&::-webkit-scrollbar-thumb]:bg-purple-600
+                [&::-webkit-scrollbar-track]:rounded-full
+                [&::-webkit-scrollbar-track]:bg-gray-800
+                [&::-webkit-scrollbar]:w-2"
+            >
+              <button
+                onClick$={() => {
+                  isModalOpen.value = false;
+                  selectedProject.value = null;
+                }}
+                class="absolute -right-4 -top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+
+              <div class="pt-2">
+                <img
+                  src={selectedProject.value.image}
+                  alt={selectedProject.value.title}
+                  class="mb-4 h-auto w-full rounded-lg"
+                />
+                <h2 class="gradient-text mb-2 text-2xl font-bold">
+                  {selectedProject.value.title}
+                </h2>
+                <span class="rounded-full bg-purple-900/50 px-3 py-1 text-sm text-purple-300">
+                  {selectedProject.value.category}
+                </span>
+              </div>
+
+              <div class="mb-6">
+                <h3 class="mb-2 text-lg font-semibold text-white">
+                  프로젝트 소개
+                </h3>
+                <p class="text-gray-300">{selectedProject.value.description}</p>
+              </div>
+
+              <div class="mb-6">
+                <h3 class="mb-2 text-lg font-semibold text-white">개발 기간</h3>
+                <p class="text-gray-300">{selectedProject.value.duration}</p>
+              </div>
+
+              <div class="mb-6">
+                <h3 class="mb-2 text-lg font-semibold text-white">사용 기술</h3>
+                <div class="flex flex-wrap gap-2">
+                  {selectedProject.value.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      class="rounded-full bg-purple-900/50 px-3 py-1 text-sm text-purple-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 });
