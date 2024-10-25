@@ -5,11 +5,11 @@ export const projects: TProject[] = [
     id: 13,
     title: "랜덤 음악 추천기",
     description: "최근에 자주 듣는 음악들을 선정해서 랜덤하게 추천",
-    image: "/images/random_music.png",
+    image: "/images/random_music/random_music.png",
     images: [
-      "/images/random_music.png",
-      "/images/random_music_olivia.png",
-      "/images/random_music_pomal.png",
+      "/images/random_music/random_music.png",
+      "/images/random_music/random_music_olivia.png",
+      "/images/random_music/random_music_pomal.png",
     ],
     duration: "24.04.03 ~ 24.04.05",
     technologies: ["HTML5", "CSS3", "JavaScript"],
@@ -37,12 +37,35 @@ export const projects: TProject[] = [
     id: 12,
     title: "아이폰 15 클론",
     description: "아이폰 15 클론 페이지 구현",
-    image: "/images/iphone15.png",
+    image: "/images/iphone15/iphone15_camel.png",
+    images: [
+      "/images/iphone15/iphone15_main.png",
+      "/images/iphone15/iphone15_camel.png",
+      "/images/iphone15/iphone15_zoom.png",
+      "/images/iphone15/iphone15_charge.png",
+      "/images/iphone15/iphone15_layout.png",
+    ],
     duration: "24.04.09 ~ 24.04.16",
     technologies: ["HTML5", "CSS3"],
     aboutLink: "https://eonduck2.github.io/iphone15Clone/",
     githubLink: "https://github.com/eonduck2/iphone15Clone",
     category: "개인",
+    details: {
+      purpose: `HTML, CSS, JS의 기본기를 학습하고 최초로 진행했던 프로젝트입니다. 
+
+최초의 프로젝트이기에 느껴졌던 최소한의 긴장감과 부담감을 적절히 소화할 수 있는 방법이 필요했고
+"내가 최근에 자주 듣는 노래들을 이용해 나만의 음악 추천기를 만들어보면 어떨까?"와 같은 호기심으로 프로젝트를 시작했습니다.
+또한 실제 학습한 기본형의 HTML, CSS, JS 기술을 적극적으로 이용하여 나만의 플레이리스트를 표현한다면
+프로젝트에 대한 "정"도 자연스럽게 붙이면서 학습 또한 뒤따라온다고 생각하여 
+위와 같은 방향으로 개발을 진행했습니다.`,
+      mainTask: `- DOM API를 이용한 객체 조작
+- 랜덤 난수 발생 후 음악 추천
+- 랜덤한 음악(조건)에 따른 가수 상세 정보 처리`,
+      workHistory: [
+        "https://freckle-nasturtium-6d7.notion.site/1-9710f3126298423a9129c31a69f60ef5?pvs=4",
+      ],
+      detailStack: ["HTML5", "CSS3", "JavaScript", "Notion", "Git", "GitHub"],
+    },
   },
   {
     id: 11,

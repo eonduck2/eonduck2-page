@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { projects } from "~/static/routes";
 import type { TProjectCategory } from "~/types/project/projectCategory.type";
-import { ImageSlider } from "../image/imageSlide";
+import { ImageSlider } from "../image/imageSlider";
 
 export default component$(() => {
   const activeCategory = useSignal<TProjectCategory>("전체");
