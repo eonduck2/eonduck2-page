@@ -1,6 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { projects } from "~/static/routes";
 import type { TProjectCategory } from "~/types/project/projectCategory.type";
+import { ImageSlider } from "../image/imageSlide";
 
 export default component$(() => {
   const activeCategory = useSignal<TProjectCategory>("전체");
@@ -178,40 +179,50 @@ export default component$(() => {
               </button>
 
               <div class="pt-2">
-                <img
-                  src={selectedProject.value.image}
-                  alt={selectedProject.value.title}
-                  class="mb-4 h-auto w-full rounded-lg"
-                  loading="lazy"
-                />
+                <ImageSlider images={selectedProject.value.images} />
                 <h2 class="gradient-text mb-2 text-2xl font-bold">
                   {selectedProject.value.title}
                 </h2>
-                <span class="rounded-full bg-purple-900/50 px-3 py-1 text-sm text-purple-300">
-                  {selectedProject.value.category}
-                </span>
               </div>
 
+              <br />
+
               <div class="mb-6">
-                <h3 class="mb-2 text-lg font-semibold text-white">
-                  프로젝트의 개발 의도
-                </h3>
-                <p class="text-gray-300">
+                <h3 class="mb-2 text-lg font-bold text-white">개발 의도</h3>
+                <p class="whitespace-pre-wrap text-gray-300">
                   {selectedProject.value.details?.purpose}
                 </p>
               </div>
 
               <div class="mb-6">
-                <h3 class="mb-2 text-lg font-semibold text-white">주요 업무</h3>
-                <p class="text-gray-300">
+                <h3 class="mb-2 text-lg font-bold text-white">주요 업무</h3>
+                <p class="whitespace-pre-wrap text-gray-300">
                   {selectedProject.value.details?.mainTask}
                 </p>
               </div>
 
               <div class="mb-6">
-                <h3 class="mb-2 text-lg font-semibold text-white">사용 기술</h3>
+                <h3 class="mb-2 text-lg font-bold text-white">작업 기록</h3>
+                <div class="flex flex-col flex-wrap gap-2">
+                  {selectedProject.value.details?.workHistory.map(
+                    (link, key) => (
+                      <a
+                        key={key}
+                        class="w-fit rounded-full bg-blue-900/50 px-3 py-1 text-sm text-emerald-300"
+                        href={link}
+                        target="_blank"
+                      >
+                        {link}
+                      </a>
+                    ),
+                  )}
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <h3 class="mb-2 text-lg font-bold text-white">상세 사항</h3>
                 <div class="flex flex-wrap gap-2">
-                  {selectedProject.value.details?.stack.map((tech) => (
+                  {selectedProject.value.details?.detailStack.map((tech) => (
                     <span
                       key={tech}
                       class="rounded-full bg-purple-900/50 px-3 py-1 text-sm text-purple-300"

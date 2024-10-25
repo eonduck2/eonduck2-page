@@ -14,6 +14,7 @@ export type TProject = {
   details?: {
     purpose: string;
     mainTask: string;
-    stack: string[];
+    workHistory: string[];
+    detailStack: string[];
   };
 };
