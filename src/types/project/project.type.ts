@@ -16,5 +16,6 @@ export type TProject = {
     mainTask: string;
     workHistory: string[];
     detailStack: string[];
+    report: string;
   };
 };

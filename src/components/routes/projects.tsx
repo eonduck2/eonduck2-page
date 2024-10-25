@@ -17,7 +17,6 @@ export default component$(() => {
       document.body.style.overflow = "auto";
     }
 
-    // 컴포넌트가 언마운트될 때 스크롤을 다시 활성화
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -76,14 +75,16 @@ export default component$(() => {
               <div class="absolute inset-0 bg-black opacity-0 transition-opacity group-hover:opacity-50"></div>
               <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
                 <div class="flex space-x-3">
-                  <a
-                    href={project.aboutLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="rounded-lg bg-purple-600 px-3 py-1.5 text-sm text-white transition-colors hover:bg-purple-700 md:px-4 md:py-2 md:text-base"
-                  >
-                    About
-                  </a>
+                  {project.aboutLink && (
+                    <a
+                      href={project.aboutLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="rounded-lg bg-purple-600 px-3 py-1.5 text-sm text-white transition-colors hover:bg-purple-700 md:px-4 md:py-2 md:text-base"
+                    >
+                      About
+                    </a>
+                  )}
                   <a
                     href={project.githubLink}
                     target="_blank"
@@ -135,7 +136,6 @@ export default component$(() => {
         ))}
       </div>
 
-      {/* Modal with custom Y scrollbar */}
       {isModalOpen.value && selectedProject.value && (
         <div class="fixed inset-0 z-50 flex items-center justify-center">
           <div
@@ -188,6 +188,20 @@ export default component$(() => {
               <br />
 
               <div class="mb-6">
+                <h3 class="mb-2 text-lg font-bold text-white">상세 사항</h3>
+                <div class="flex flex-wrap gap-2">
+                  {selectedProject.value.details?.detailStack.map((tech) => (
+                    <span
+                      key={tech}
+                      class="rounded-full bg-purple-900/50 px-3 py-1 text-sm text-purple-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div class="mb-6">
                 <h3 class="mb-2 text-lg font-bold text-white">개발 의도</h3>
                 <p class="whitespace-pre-wrap text-gray-300">
                   {selectedProject.value.details?.purpose}
@@ -220,19 +234,11 @@ export default component$(() => {
               </div>
 
               <div class="mb-6">
-                <h3 class="mb-2 text-lg font-bold text-white">상세 사항</h3>
-                <div class="flex flex-wrap gap-2">
-                  {selectedProject.value.details?.detailStack.map((tech) => (
-                    <span
-                      key={tech}
-                      class="rounded-full bg-purple-900/50 px-3 py-1 text-sm text-purple-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <h3 class="mb-2 text-lg font-bold text-white">후기</h3>
+                <p class="whitespace-pre-wrap text-gray-300">
+                  {selectedProject.value.details?.report}
+                </p>
               </div>
-              {/* !! */}
             </div>
           </div>
         </div>

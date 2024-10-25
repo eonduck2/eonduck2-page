@@ -17,6 +17,8 @@ export const projects: TProject[] = [
     githubLink: "https://github.com/eonduck2/random_music_recommend",
     category: "개인",
     details: {
+      detailStack: ["HTML5", "CSS3", "JavaScript", "Notion", "Git", "GitHub"],
+
       purpose: `HTML, CSS, JS의 기본기를 학습하고 최초로 진행했던 프로젝트입니다. 
 
 최초의 프로젝트이기에 느껴졌던 최소한의 긴장감과 부담감을 적절히 소화할 수 있는 방법이 필요했고
@@ -30,7 +32,8 @@ export const projects: TProject[] = [
       workHistory: [
         "https://freckle-nasturtium-6d7.notion.site/1-9710f3126298423a9129c31a69f60ef5?pvs=4",
       ],
-      detailStack: ["HTML5", "CSS3", "JavaScript", "Notion", "Git", "GitHub"],
+      report: `표현하고 싶었던 아이디어를 웹으로 표현할 수 있다는 가능성과 성취감을 활짝 열어준 고마운 프로젝트이며
+짧더라도 작업에 대한 기록을 남겨두는 것이 중요하다는 것을 알려준 가치가 높은 프로젝트입니다.`,
     },
   },
   {
@@ -51,20 +54,26 @@ export const projects: TProject[] = [
     githubLink: "https://github.com/eonduck2/iphone15Clone",
     category: "개인",
     details: {
-      purpose: `HTML, CSS, JS의 기본기를 학습하고 최초로 진행했던 프로젝트입니다. 
-
-최초의 프로젝트이기에 느껴졌던 최소한의 긴장감과 부담감을 적절히 소화할 수 있는 방법이 필요했고
-"내가 최근에 자주 듣는 노래들을 이용해 나만의 음악 추천기를 만들어보면 어떨까?"와 같은 호기심으로 프로젝트를 시작했습니다.
-또한 실제 학습한 기본형의 HTML, CSS, JS 기술을 적극적으로 이용하여 나만의 플레이리스트를 표현한다면
-프로젝트에 대한 "정"도 자연스럽게 붙이면서 학습 또한 뒤따라온다고 생각하여 
-위와 같은 방향으로 개발을 진행했습니다.`,
-      mainTask: `- DOM API를 이용한 객체 조작
-- 랜덤 난수 발생 후 음악 추천
-- 랜덤한 음악(조건)에 따른 가수 상세 정보 처리`,
-      workHistory: [
-        "https://freckle-nasturtium-6d7.notion.site/1-9710f3126298423a9129c31a69f60ef5?pvs=4",
-      ],
       detailStack: ["HTML5", "CSS3", "JavaScript", "Notion", "Git", "GitHub"],
+
+      purpose: `모던 레이아웃 및 CSS 가상 클래스에 대한 이해도와 사용 능력치 상승을 위해 진행된 프로젝트입니다.
+
+모던 웹 서비스에서 Flex나 Grid를 적극적으로 이용한 레이아웃을 개발자 도구를 통해 다수 확인하였고,
+이를 이해하고 활용해야 모던 웹에서의 기본기를 갖출 수 있다고 판단했습니다.
+
+또한 CSS 가상 클래스에 대한 이해도도 높이고 싶었던 와중이었기에 
+가장 잘 어울리는 프로젝트는 "웹 사이트 클론"이라고 생각했고
+이에 대한 적절한 사이트인 애플의 "iPhone 15" 소개 및 판매 사이트를 대상으로 페이지 클론 코딩을 진행했습니다.
+`,
+      mainTask: `- Flex, Grid를 이용한 레이아웃 구성
+- CSS Selector를 이용한 스타일 정의
+- 공유 가능한 스타일 변수 정의 및 전역 사용`,
+      workHistory: [
+        "https://freckle-nasturtium-6d7.notion.site/1-2c271c59b16245dcb2bd82bb280aea18?pvs=4",
+        "https://freckle-nasturtium-6d7.notion.site/2-0fb944fd42e14ed38490092b0dcff8de?pvs=4",
+      ],
+      report: `특정 스타일 코드에 대한 변수 지정이나 폰트, 레이아웃과 같은 스타일 종류에 따른 CSS 파일 등을 분류하는 등의
+"유지 보수 가능한 형태의 코드란 무엇인가"에 대한 간접적인 경험을 습득할 수 있었습니다.`,
     },
   },
   {
@@ -72,25 +81,109 @@ export const projects: TProject[] = [
     title: "Team.gg",
     description:
       '온라인 게임 "리그 오브 레전드" 사용자의 전적 검색이 가능한 서비스 구현',
-    image: "/images/teamGG.png",
+    image: "/images/teamGG/teamGG_search_result.png",
+    images: [
+      "/images/teamGG/teamGG_searching.png",
+      "/images/teamGG/teamGG_no_playing.png",
+      "/images/teamGG/teamGG_search_result.png",
+      "/images/teamGG/teamGG_no_search_result.png",
+      "/images/teamGG/teamGG_api_flow.png",
+      "/images/teamGG/teamGG_api_flow2.png",
+    ],
     duration: "24.04.15 ~ 24.05.27",
     technologies: ["HTML5", "SCSS", "JavaScript", "Node.js"],
     aboutLink:
       "https://kongukjae.notion.site/Team-gg-2fb51b32fdd644e4b95064b4834c8484?pvs=4",
     githubLink: "https://github.com/eonduck2/Team.gg",
     category: "팀",
+    details: {
+      detailStack: [
+        "HTML5",
+        "SCSS",
+        "JavaScript",
+        "Node.js",
+        "Notion",
+        "Git",
+        "GitHub",
+        "Figma",
+      ],
+
+      purpose: `첫 팀프로젝트이자 Vanilla JavaScript 및 CSS 전처리기에 대한 이해도를 높일 수 있었던 프로젝트입니다.
+
+대중적인 온라인 게임인 "리그 오브 레전드"를 플레이 해 본 경험을 살려
+리그 오브 레전드 유저들이 친숙하게 사용 가능한 전적 검색 사이트를 구현하기 하기 위해 진행된 프로젝트이며
+기존에 존재하는 롤 전적 검색 사이트의 장점(전적 뿐만 아니라 유저&게임들의 세부 정보 제공)은 흡수하고
+단점(복잡도가 높은 레이아웃 구성)은 케어하려는 의도를 가지고 개발을 진행했습니다.
+
+또한 Node.js를 이용해서 서버를 구현하고 위 서버를 이용한 Riot API의 반환 데이터 처리와도 같은 작업을
+프레임워크나 라이브러리를 사용하지 않고 Vanilla JavaScript 코딩을 통해 의도적으로 코어에 접근하기 위해 시도했고, 성공적으로 구현했습니다.
+`,
+      mainTask: `- Semantic Mark-Up을 통한 의미있는 HTML5 문서 작성
+- SCSS 셋업 및 MixIn과 같은 전처리기의 특징을 이용해 재사용 가능한 스타일 코드 및 모듈 작성
+- 스켈레톤 페이지 구현 및 반환(응답) 데이터 표현
+- Debounce 기법을 적용한 전적 검색 구현
+- 사용자 검색 내용 로컬 스토리지에 저장 및 관리
+- 사용자 검색 정보 유효성 검사
+- LOG 폴더에 API 요청 횟수와 시간 로깅`,
+      workHistory: [
+        "https://kongukjae.notion.site/bbc5aff5bb1b4cd893e40f36389252e2?pvs=4",
+      ],
+      report: `Semantic Mark-Up 방식의 HTML5 문서 작성이 강력한 이점을 준다는 생각이 들었습니다.
+의미 있는 구조를 작성해 문서를 볼 때 피로도가 상당히 낮아짐을 느꼈고 
+이는 업무의 지속성을 상당히 높여줬다는 것을 체감했습니다.
+또한 전처리기/후처리기에 대한 개념을 학습하고 슥듭해 생산성을 확보했으며,
+Vanilla JS 개발을 통해 코어에 집중하고 들여다봄으로써
+프레임워크나 라이브러리에 대한 긴장감은 사라지고 JavaScript의 역치가 늘어났음을 체감했습니다.`,
+    },
   },
   {
     id: 10,
     title: "나루토 캐릭터 카드",
     description:
       "narutoDB API를 이용한 가장 좋아하는 나루토 캐릭터 5명의 캐릭터 카드 구현",
-    image: "/images/favorite_naruto.png",
+    image: "/images/favorite_naruto/fn_obito.png",
+    images: [
+      "/images/favorite_naruto/fn_main.png",
+      "/images/favorite_naruto/fn_itachi.png",
+      "/images/favorite_naruto/fn_obito.png",
+      "/images/favorite_naruto/fn_madara.png",
+    ],
     duration: "24.05.11 ~ 24.05.11",
     technologies: ["HTML5", "SCSS", "JavaScript", "Node.js"],
     aboutLink: "https://eonduck2.github.io/favorite_naruto_character/",
     githubLink: "https://github.com/eonduck2/favorite_naruto_character",
     category: "개인",
+    details: {
+      detailStack: [
+        "HTML5",
+        "SCSS",
+        "JavaScript",
+        "Node.js",
+        "Notion",
+        "Git",
+        "GitHub",
+        "Figma",
+      ],
+
+      purpose: `의도적인 Vanilla JS 코딩이 JavaScript 역치를 큰 폭으로 늘려준다는 것을 체감했고
+API 요청에 따른 이미 만들어져있는 데이터를 반환받아서 개발을 진행하는 데에 큰 매력을 느꼈습니다.
+그렇기 때문에, JS 역치를 더 향상시키고 싶어서 
+다시 한번 Node.js로 서버를 구현하고 서빙하는 개인 프로젝트를 진행했습니다.
+
+해당 개인 프로젝트는 "개인 만족"이라는 키워드에 집중해서 평소에 좋아하는 무언가를 만들어보고 싶었고
+어릴 때 자주 보고 좋아했던 만화인 "나루토"의 API를 이용해서 반환 데이터를 통한 간단한 나루토 캐릭터 카드를 구현했습니다.
+`,
+      mainTask: `- 프로미스 체이닝을 통한 반환 데이터 처리
+- Node.js를 통한 서버 사이드 렌더링 및 서빙`,
+      workHistory: [
+        "https://freckle-nasturtium-6d7.notion.site/950ca3ef0941482fa7a9aa2604f7a16d?pvs=4",
+      ],
+      report: `JavaScript 프레임워크나 라이브러리에 대한 긴장감이 확실히 사라졌다는 것을 느꼈고
+JavaScript의 깊이감 또한 인지하고 방향성을 확인할 수 있었습니다.
+
+또한, "서버"라는 단어 자체 및 구현에 대한 알게 모르게 갖고있는 부담감 또한 사라졌고
+Node.js의 가능성 또한 확인할 수 있었기 때문에 저의 성장 한계에 있어서 아주 작은 의심조차 사라졌습니다.`,
+    },
   },
   {
     id: 9,
