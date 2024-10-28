@@ -214,15 +214,16 @@ export default component$(() => {
                   {selectedProject.value.details?.mainTask}
                 </p>
               </div>
-
-              <div class="mb-6">
-                <h3 class="mb-2 text-lg font-bold text-white">작업 기록</h3>
-                <div class="flex flex-col flex-wrap gap-2">
+              <div class="mb-4 sm:mb-6">
+                <h3 class="mb-2 text-base font-bold text-white sm:text-lg">
+                  작업 기록
+                </h3>
+                <div class="flex flex-col flex-wrap gap-1.5 sm:gap-2">
                   {selectedProject.value.details?.workHistory.map(
                     (link, key) => (
                       <a
                         key={key}
-                        class="w-fit rounded-full bg-blue-900/50 px-3 py-1 text-sm text-emerald-300"
+                        class="w-fit rounded-full bg-blue-900/50 px-2.5 py-0.5 text-xs text-emerald-300 transition-colors hover:bg-blue-800/50 sm:px-3 sm:py-1 sm:text-sm"
                         href={link}
                         target="_blank"
                       >
