@@ -136,6 +136,7 @@ export default component$(() => {
         ))}
       </div>
 
+      {/* 모달 오픈 부분 */}
       {isModalOpen.value && selectedProject.value && (
         <div class="fixed inset-0 z-50 flex items-center justify-center">
           <div
