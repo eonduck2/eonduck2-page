@@ -685,5 +685,5 @@ export const stacks = {
   ],
   "Back-End": ["Node.js", "Express.js", "Nest.js", "Flask", "Gin"],
   Database: ["SQLite3", "MongoDB", "Redis"],
-  "cloud/deploy": ["AWS", "GCP"],
+  "cloud/deploy": ["AWS", "GCP", "Docker"],
 };
