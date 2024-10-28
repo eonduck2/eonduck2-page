@@ -441,7 +441,7 @@ SQLite를 사용해 가볍게 데이터를 관리하려는 의도를 가지고 �
 - 정적 자원 분리(리팩토링)
 - 모듈 분리(리팩토링)
 - 인터페이스 밎 타입 분리(리팩토링)
-- AWS Amplify를 이용해 Next.js 배포
+- AWS Amplify를 이용해 Next.js 프로젝트 배포
 - AWS EC2를 이용해 Nest.js 프로젝트 배포
 - AWS S3를 이용해 프로젝트 이미지 호스팅
 - MongoDB Atlas를 이용해 클라우드 DB 환경 셋업
