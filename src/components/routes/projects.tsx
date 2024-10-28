@@ -75,6 +75,23 @@ export default component$(() => {
               <div class="absolute inset-0 bg-black opacity-0 transition-opacity group-hover:opacity-50"></div>
               <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
                 <div class="flex space-x-3">
+                  <button
+                    onClick$={() => {
+                      selectedProject.value = project;
+                      isModalOpen.value = true;
+                    }}
+                    class="rounded-lg bg-blue-600 px-3 py-1.5 text-sm text-white transition-colors hover:bg-blue-700 md:px-4 md:py-2 md:text-base"
+                  >
+                    Details
+                  </button>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="rounded-lg bg-gray-800 px-3 py-1.5 text-sm text-white transition-colors hover:bg-gray-700 md:px-4 md:py-2 md:text-base"
+                  >
+                    GitHub
+                  </a>
                   {project.aboutLink && (
                     <a
                       href={project.aboutLink}
@@ -85,23 +102,6 @@ export default component$(() => {
                       About
                     </a>
                   )}
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="rounded-lg bg-gray-800 px-3 py-1.5 text-sm text-white transition-colors hover:bg-gray-700 md:px-4 md:py-2 md:text-base"
-                  >
-                    GitHub
-                  </a>
-                  <button
-                    onClick$={() => {
-                      selectedProject.value = project;
-                      isModalOpen.value = true;
-                    }}
-                    class="rounded-lg bg-blue-600 px-3 py-1.5 text-sm text-white transition-colors hover:bg-blue-700 md:px-4 md:py-2 md:text-base"
-                  >
-                    Details
-                  </button>
                 </div>
               </div>
             </div>
