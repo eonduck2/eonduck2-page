@@ -32,6 +32,12 @@ export const ImageSlider = component$<ImageSliderProps>(
     const startAutoSlide = $(() => {
       if (intervalIdRef.value) return;
 
+      // 즉시 다음 슬라이드로 이동
+      if (!isAnimating.value) {
+        currentIndex.value =
+          currentIndex.value === images.length - 1 ? 0 : currentIndex.value + 1;
+      }
+
       isAutoPlaying.value = true;
       intervalIdRef.value = window.setInterval(() => {
         if (!isAnimating.value) {
