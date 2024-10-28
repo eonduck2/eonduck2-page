@@ -677,10 +677,10 @@ NPM도 생소했던 시기를 생각해보면 Vanilla JS 코딩을 통해 역치
 export const stacks = {
   Language: ["JavaScript", "TypeScript", "Go", "Python"],
   "Front-End": [
+    "Qwik",
     "React.js",
     "Next.js",
     "Vue.js",
-    "Qwik",
     "Tailwind CSS",
     "Vanilla Extract",
     "SASS",
