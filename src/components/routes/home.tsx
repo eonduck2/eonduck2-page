@@ -9,7 +9,7 @@ export default component$(() => {
           이종수
         </h1>
         <p class="animated-border flex justify-center text-xl text-gray-400 md:text-2xl">
-          Web Developer
+          Developer
         </p>
       </div>
     </div>

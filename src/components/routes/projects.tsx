@@ -92,16 +92,6 @@ export default component$(() => {
                   >
                     GitHub
                   </a>
-                  {project.aboutLink && (
-                    <a
-                      href={project.aboutLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="rounded-lg bg-purple-600 px-3 py-1.5 text-sm text-white transition-colors hover:bg-purple-700 md:px-4 md:py-2 md:text-base"
-                    >
-                      About
-                    </a>
-                  )}
                 </div>
               </div>
             </div>
