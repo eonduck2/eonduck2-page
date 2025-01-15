@@ -624,7 +624,7 @@ NPM도 생소했던 시기를 생각해보면 Vanilla JS 코딩을 통해 역치
       "/images/ytUp/yt_trending.png",
       "/images/ytUp/yt_figma.png",
     ],
-    duration: "24.09.09 ~ ing",
+    duration: "24.09.09 ~ 24.12.04",
     technologies: ["Qwik", "Go", "Redis"],
     aboutLink: "",
     githubLink: "https://github.com/eonduck2/ioyoa-fe",
